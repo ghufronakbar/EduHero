@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Image, StyleSheet, Text, View } from 'react-native';
 import 'react-native-reanimated';
 
 export const unstable_settings = {
@@ -39,8 +39,12 @@ export default function RootLayout() {
         end={{ x: 1, y: 1 }}
       >
         <View style={styles.splashContent}>
-          <Text style={styles.splashEmoji}>🎓</Text>
-          <Text style={styles.splashTitle}>EduHero</Text>
+          <Image style={styles.splashEmoji}
+            source={require("@/assets/images/icon-new.png")}
+            width={200}
+            height={200}
+          />
+          {/* <Text style={styles.splashTitle}>EduHero</Text> */}
           <Text style={styles.splashSubtitle}>Belajar Jadi Seru!</Text>
           <ActivityIndicator size="large" color="#fff" style={styles.loader} />
         </View>
