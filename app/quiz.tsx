@@ -154,20 +154,6 @@ export default function QuizScreen() {
         router.back();
     };
 
-    // Loading state
-    if (adaptive.isLoading || isLoadingQuestion) {
-        return (
-            <SafeAreaView style={styles.container}>
-                <LinearGradient
-                    colors={categoryInfo.gradient as [string, string]}
-                    style={styles.loadingContainer}
-                >
-                    <ActivityIndicator size="large" color="#fff" />
-                    <Text style={styles.loadingText}>Memuat soal...</Text>
-                </LinearGradient>
-            </SafeAreaView>
-        );
-    }
 
     // No question
     if (!currentQuestion) {
@@ -186,6 +172,24 @@ export default function QuizScreen() {
             </SafeAreaView>
         );
     }
+
+
+    // Loading state
+    if (adaptive.isLoading || isLoadingQuestion) {
+        return (
+            <SafeAreaView style={styles.container}>
+                <LinearGradient
+                    colors={categoryInfo.gradient as [string, string]}
+                    style={styles.loadingContainer}
+                >
+                    <ActivityIndicator size="large" color="#fff" />
+                    <Text style={styles.loadingText}>Memuat soal...</Text>
+                </LinearGradient>
+            </SafeAreaView>
+        );
+    }
+
+
 
     return (
         <SafeAreaView style={styles.container}>

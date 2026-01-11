@@ -1,4 +1,5 @@
 import { Colors, Gradients } from '@/constants/theme';
+import { initDatabase } from '@/database/sqlite';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -17,8 +18,7 @@ export default function RootLayout() {
     const prepare = async () => {
       try {
         // Simulated loading (initialize database, load assets, etc.)
-        // await initDatabase();
-        // await resetDatabase();
+        await initDatabase();
         await new Promise(resolve => setTimeout(resolve, 1000));
         setIsReady(true);
       } catch (e) {
